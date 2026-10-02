@@ -1,0 +1,24 @@
+FILE PROTECTION UTILITY - SAMPLE VERIFICATION LOG
+
+Install:
+pip install cryptography
+
+Encryption:
+python file_protection.py encrypt secret.txt secret.txt.enc
+
+[+] File encrypted successfully.
+[+] Output: secret.txt.enc
+[+] Encryption: AES-256-GCM
+[+] Key Derivation: PBKDF2-HMAC-SHA256
+
+Decryption:
+python file_protection.py decrypt secret.txt.enc recovered.txt
+
+[+] File decrypted successfully.
+[+] Output: recovered.txt
+[+] Integrity/MAC verification: PASSED
+
+Verification:
+fc /b secret.txt recovered.txt
+
+FC: no differences encountered
